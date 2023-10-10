@@ -1,0 +1,12 @@
+{
+    "name": "yt-transcript",
+    "description": "Get YouTube transcript",
+    "version": "1.0",
+    "permissions": ["activeTab", "storage", "scripting"],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "manifest_version": 3
+   
+  }
+  
