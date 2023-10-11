@@ -33,11 +33,20 @@
       font-weight: bold;
       font-size: 18px;
     }
+    
+    /* Add margin between buttons */
+    button#hideTranscript {
+      margin-bottom: 10px;
+    }
   </style>
   <script src="popup.js"></script>
 </head>
 <body>
-  <button id="copyTranscript">Copy Transcript</button>
-  <p id="copyMessage"></p> 
+  <button id="showTranscript">Show Transcript</button>
+  <button id="hideTranscript">Hide Transcript</button>
+  <button id="copyTranscript" style="display: none;">Copy Transcript</button> <!-- Hidden by default -->
+  <p id="showTranscriptMessage"></p>
+  <p id="hideTranscriptMessage"></p>
+  <p id="copyMessage"></p>
 </body>
 </html>

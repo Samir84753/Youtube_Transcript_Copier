@@ -6,6 +6,7 @@
     "action": {
       "default_popup": "index.html"
     },
-    "manifest_version": 3 
+    "manifest_version": 3
+  
   }
   
