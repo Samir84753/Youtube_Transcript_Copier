@@ -70,15 +70,19 @@ function showTranscript() {
           transcriptPanel.setAttribute('visibility', 'ENGAGEMENT_PANEL_VISIBILITY_EXPANDED');
           return true;
         }
-        return false;
+        else{
+          return false;
+        }
       },
     }, function (result) {
-      if (result[0]) {
-        // Display the message in the popup
-        const messageElement = document.getElementById('showTranscriptMessage');
-        showAndHideMessages(messageElement, 'Transcript is now visible.', 1500);
+      const messageElement = document.getElementById('showTranscriptMessage');
+      const message = result[0].result == true?'Transcript is now visible.':'Transcript is not available for this video.';
+      showAndHideMessages(messageElement,message, 1500);
 
-      } 
+      //hide copy button if no transcript available.
+      if (result[0].result==false){
+        document.getElementById('copyTranscript').style.display = 'none';
+      }
     });
   });
 }
@@ -95,14 +99,15 @@ function hideTranscript() {
           transcriptPanel.setAttribute('visibility', 'ENGAGEMENT_PANEL_VISIBILITY_HIDDEN');
           return true;
         }
-        return false;
+        else {
+          return false;
+        }
       },
     }, function (result) {
-      if (result[0]) {
+      if (result[0].result) {
         // Display the message in the popup
         const messageElement = document.getElementById('hideTranscriptMessage');
         showAndHideMessages(messageElement, 'Transcript is now hidden.', 1500);
-
       } 
     });
   });
